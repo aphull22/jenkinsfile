@@ -1,0 +1,11 @@
+ecrRepositoryName = ["test"]
+
+//pipeline() is defined in var folder
+//groovy files living in var folder are available to be called directly from Jenkinsfile
+//pipeline() calls preBuild(), then body() of Jenkinsfile, then postBuild()
+
+pipeline(){
+
+//pipeline() exposes builder() to make it available from Jenkinsfile
+	builder.run(ecrRepositoryName)
+}
